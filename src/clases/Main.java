@@ -11,6 +11,7 @@ package clases;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         EscuelaDeportiva escuela = new EscuelaDeportiva();
@@ -54,29 +55,11 @@ public class Main {
                     break;
 
                 case 4:
-                    if (escuela == null) {
-                        System.out.println("Primero debe registrar la escuela.");
-                    } else {
-                        System.out.println("\n--- REGISTRO DE ASISTENCIA ---");
-                        escuela.registrarAsistencia();
-                    }
-                    break;
-
-                case 5:
                     System.out.println("\n--- MOSTRAR INFORMACIÓN COMPLETA ---");
                     escuela.mostrar();
                     break;
 
-                case 6:
-                    if (escuela == null) {
-                        System.out.println("Primero debe registrar la escuela.");
-                    } else {
-                        System.out.println("\n--- MOSTRAR ASISTENCIAS ---");
-                        escuela.mostrarAsistencias();
-                    }
-                    break;
-
-                case 7:
+                case 5:
                     System.out.println("Saliendo...");
                     break;
 
@@ -87,4 +70,3 @@ public class Main {
         } while (opcion != 7);
     }
 }
-

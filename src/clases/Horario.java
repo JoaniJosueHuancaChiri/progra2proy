@@ -11,26 +11,16 @@ import java.util.Scanner;
  * @author Sony Vaio
  */
 public class Horario {
-    private int idHorario;
     private String dia, horaInicio, horaFin;
     public void leer(){
-        System.out.println("Digite idHorario, dia, horaInicio, horaFin");
+        System.out.println("Digite dia, horaInicio, horaFin");
         Scanner scanner=new Scanner(System.in);
-        idHorario=scanner.nextInt();
         dia=scanner.next();
         horaInicio=scanner.next();
         horaFin=scanner.next();
     }
     public void mostrar(){
-        System.out.println(idHorario+" "+dia+" "+ horaInicio+" "+horaFin);
-    }
-
-    public int getIdHorario() {
-        return idHorario;
-    }
-
-    public void setIdHorario(int idHorario) {
-        this.idHorario = idHorario;
+        System.out.println(dia+" "+ horaInicio+" "+horaFin);
     }
 
     public String getDia() {

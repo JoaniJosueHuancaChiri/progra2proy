@@ -12,17 +12,18 @@ import java.util.Scanner;
  */
 public class Disciplina {
 
-    private String nombre, categoria;
-    private int cupoMax = 0, nroDeportistas;
+    private String nombre, categoria,estado;
+    private int cupoMax = 0, nroDeportistas, nroAsistencias =0;
     private Entrenador e = new Entrenador();
     private Horario h = new Horario();
     private Inscripcion m[] = new Inscripcion[cupoMax];
-
+    private Asistencia s[]=new Asistencia[1000];
     public void leer() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite nombre, categoria, cupoMaximo, nro de Deportistas");
+        System.out.println("Digite nombre, categoria, estado, cupoMaximo, nro de Deportistas");
         nombre = scanner.next();
         categoria = scanner.next();
+        estado=scanner.next();
         cupoMax = scanner.nextInt();
         m = new Inscripcion[cupoMax];
         nroDeportistas = scanner.nextInt();
@@ -35,7 +36,7 @@ public class Disciplina {
     }
 
     public void mostrar() {
-        System.out.println(nombre + " " + categoria + " " + cupoMax + " " + nroDeportistas);
+        System.out.println(nombre + " " + categoria +" "+estado+" " + cupoMax + " " + nroDeportistas);
         e.mostrar();
         h.mostrar();
         for (int i = 0; i < nroDeportistas; i++) {
@@ -124,6 +125,30 @@ public class Disciplina {
 
     public void setM(Inscripcion[] m) {
         this.m = m;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getNroAsistencias() {
+        return nroAsistencias;
+    }
+
+    public void setNroAsistencias(int nroAsistencias) {
+        this.nroAsistencias = nroAsistencias;
+    }
+
+    public Asistencia[] getS() {
+        return s;
+    }
+
+    public void setS(Asistencia[] s) {
+        this.s = s;
     }
 
 }

@@ -14,11 +14,9 @@ public class Asistencia {
 
     private String fecha, presente;
     private Deportista d;
-    private Disciplina di;
 
-    public Asistencia(Deportista deportista, Disciplina disciplina) {
+    public Asistencia(Deportista deportista) {
         this.d = deportista;
-        this.di = disciplina;
     }
 
     public void registrar() {
@@ -35,7 +33,6 @@ public class Asistencia {
         System.out.println("Fecha: " + fecha);
         System.out.println("Asistencia: " + presente);
         System.out.println("Deportista: " + d.getNombre()+" "+ d.getPaterno()+" "+d.getMaterno());
-        System.out.println("Disciplina: " + di.getNombre());
     }
 
     public String getFecha() {
@@ -61,13 +58,4 @@ public class Asistencia {
     public void setD(Deportista d) {
         this.d = d;
     }
-
-    public Disciplina getDi() {
-        return di;
-    }
-
-    public void setDi(Disciplina di) {
-        this.di = di;
-    }
-    
 }

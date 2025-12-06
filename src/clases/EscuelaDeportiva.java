@@ -16,7 +16,6 @@ public class EscuelaDeportiva {
     private String nombre, descripcion;
     private int nroDisciplinas;
     private Disciplina d[] = new Disciplina[50];
-    private ArrayList<Asistencia> asistencias = new ArrayList<>();
 
     public void leer() {
         Scanner scanner = new Scanner(System.in);
@@ -62,57 +61,6 @@ public class EscuelaDeportiva {
         }
 
         d[op].registrarDeportistas();
-    }
-
-    public void registrarAsistencia() {
-
-        Scanner sc = new Scanner(System.in);
-
-        if (nroDisciplinas == 0) {
-            System.out.println("No hay disciplinas registradas.");
-            return;
-        }
-
-        System.out.println("Seleccione la disciplina:");
-        for (int i = 0; i < nroDisciplinas; i++) {
-            System.out.println((i + 1) + "). " + d[i].getNombre());
-        }
-        int opDisc = sc.nextInt() - 1;
-
-        Disciplina disc = d[opDisc];
-
-        if (disc.getNroDeportistas() == 0) {
-            System.out.println("No hay deportistas inscritos en esta disciplina.");
-            return;
-        }
-
-        System.out.println("Seleccione al deportista:");
-        for (int i = 0; i < disc.getNroDeportistas(); i++) {
-            System.out.println((i + 1) + "). " + disc.getDeportista(i).getNombre());
-        }
-        int opDep = sc.nextInt() - 1;
-
-        Deportista dep = disc.getDeportista(opDep);
-
-        Asistencia a = new Asistencia(dep, disc);
-        a.registrar();
-
-        asistencias.add(a);
-
-        System.out.println("Asistencia registrada correctamente.");
-    }
-
-    public void mostrarAsistencias() {
-        if (asistencias.isEmpty()) {
-            System.out.println("No hay asistencias registradas.");
-            return;
-        }
-
-        System.out.println("===== LISTA DE ASISTENCIAS =====");
-
-        for (Asistencia a : asistencias) {
-            a.mostrar();
-        }
     }
 
     public String getNombre() {

@@ -12,7 +12,6 @@ import java.util.Scanner;
  */
 public class Inscripcion {
 
-    private int idInscripcion;
     private String fecha, estado;
     private Deportista d = new Deportista();
 
@@ -21,7 +20,6 @@ public class Inscripcion {
         System.out.println("Datos de la inscripcion");
         System.out.println("Digite idInscripcion, fecha, estado");
         Scanner scanner = new Scanner(System.in);
-        idInscripcion = scanner.nextInt();
         scanner.nextLine();
         fecha = scanner.next();
         estado = scanner.next();
@@ -29,19 +27,11 @@ public class Inscripcion {
 
     public void mostrar() {
         d.mostrar();
-        System.out.println(idInscripcion + " " + fecha + " " + estado);
+        System.out.println(fecha + " " + estado);
     }
 
     public Deportista getDeportista() {
         return d;
-    }
-
-    public int getIdInscripcion() {
-        return idInscripcion;
-    }
-
-    public void setIdInscripcion(int idInscripcion) {
-        this.idInscripcion = idInscripcion;
     }
 
     public String getFecha() {

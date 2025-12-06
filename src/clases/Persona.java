@@ -11,21 +11,23 @@ import java.util.Scanner;
  * @author Sony Vaio
  */
 public class Persona {  
-    private String nombre, paterno, materno;
+    private String nombre, paterno, materno,fechaNacimiento;
     private int  ci, telefono;
     public void leer(){
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Digite nombre, paterno, materno, ci, celular");
+        System.out.println("Digite nombre, paterno, materno, ci, celular,fechaNacimiento");
         nombre=scanner.next();
         paterno=scanner.next();
         materno=scanner.next();
         ci=scanner.nextInt();
         telefono=scanner.nextInt();
+        fechaNacimiento=scanner.next();
     }
     public void mostrar(){
         System.out.println(nombre+ " "+ paterno+" "+materno);
         System.out.println("ci: "+ci);
         System.out.println("cel: "+telefono);
+        System.out.println("Fecha nac: "+fechaNacimiento);
     }
 
     public String getNombre() {
@@ -66,6 +68,14 @@ public class Persona {
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
     
 }
