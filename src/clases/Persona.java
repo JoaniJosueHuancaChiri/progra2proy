@@ -15,7 +15,7 @@ public class Persona {
     private int  ci, telefono;
     public void leer(){
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Digite nombre, paterno, materno, ci, celular,fechaNacimiento");
+        System.out.println("Digite nombre, paterno, materno, ci, celular, fechaNacimiento");
         nombre=scanner.next();
         paterno=scanner.next();
         materno=scanner.next();

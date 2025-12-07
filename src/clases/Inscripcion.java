@@ -18,9 +18,8 @@ public class Inscripcion {
     public void leer() {
         d.leer();
         System.out.println("Datos de la inscripcion");
-        System.out.println("Digite idInscripcion, fecha, estado");
+        System.out.println("Digite fecha, estado");
         Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
         fecha = scanner.next();
         estado = scanner.next();
     }

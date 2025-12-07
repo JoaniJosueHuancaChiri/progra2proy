@@ -25,7 +25,7 @@ public class Asistencia {
         System.out.println("Ingrese fecha (dd/mm/aaaa): ");
         fecha = scanner.next();
 
-        System.out.println("¿Asistio? (si, no): ");
+        System.out.println("Asistio? (si, no): ");
         presente = scanner.next();;
     }
 

@@ -12,18 +12,19 @@ import java.util.Scanner;
  */
 public class Disciplina {
 
-    private String nombre, categoria,estado;
-    private int cupoMax = 0, nroDeportistas, nroAsistencias =0;
+    private String nombre, categoria, estado;
+    private int cupoMax = 0, nroDeportistas, nroAsistencias = 0;
     private Entrenador e = new Entrenador();
     private Horario h = new Horario();
     private Inscripcion m[] = new Inscripcion[cupoMax];
-    private Asistencia s[]=new Asistencia[1000];
+    private Asistencia s[] = new Asistencia[1000];
+
     public void leer() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite nombre, categoria, estado, cupoMaximo, nro de Deportistas");
         nombre = scanner.next();
         categoria = scanner.next();
-        estado=scanner.next();
+        estado = scanner.next();
         cupoMax = scanner.nextInt();
         m = new Inscripcion[cupoMax];
         nroDeportistas = scanner.nextInt();
@@ -36,7 +37,7 @@ public class Disciplina {
     }
 
     public void mostrar() {
-        System.out.println(nombre + " " + categoria +" "+estado+" " + cupoMax + " " + nroDeportistas);
+        System.out.println(nombre + " " + categoria + " " + estado + " " + cupoMax + " " + nroDeportistas);
         e.mostrar();
         h.mostrar();
         for (int i = 0; i < nroDeportistas; i++) {
@@ -46,15 +47,15 @@ public class Disciplina {
 
     public void registrarDeportistas() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("¿Cuantos deportistas quiere inscribir? (máx " + cupoMax + ")");
+        int num=cupoMax-nroDeportistas;
+        System.out.println("Cuantos deportistas quiere inscribir? (max " + num + ")");
         int nuevos = scanner.nextInt();
 
         if (nroDeportistas + nuevos > cupoMax) {
-            System.out.println("Excede el cupo máximo.");
+            System.out.println("Excede el cupo maxinmo.");
             return;
         }
-
-        // Agregar nuevos deportistas al arreglo existente
+        
         for (int i = 0; i < nuevos; i++) {
             m[nroDeportistas] = new Inscripcion();
             System.out.println("\n--- INSCRIPCION " + (nroDeportistas + 1) + " ---");
