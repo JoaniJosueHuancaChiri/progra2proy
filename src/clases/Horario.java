@@ -20,6 +20,7 @@ public class Horario {
         horaFin=scanner.next();
     }
     public void mostrar(){
+        System.out.println("ESTE ES EL HORARIO");
         System.out.println(dia+" "+ horaInicio+" "+horaFin);
     }
 
