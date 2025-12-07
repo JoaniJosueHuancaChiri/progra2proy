@@ -16,6 +16,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         EscuelaDeportiva escuela = new EscuelaDeportiva();
         System.out.println("prueba test de jhosua");
+        System.out.println("prueba teste de lenar");
         int opcion;
 
         do {
