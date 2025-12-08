@@ -4,13 +4,14 @@
  */
 package clases;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Sony Vaio
  */
-public class Deportista extends Persona {
+public class Deportista extends Persona implements Serializable{
 
     private int matriculaEst, semestre;
     private String carrera, facultad;

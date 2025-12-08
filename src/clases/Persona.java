@@ -4,13 +4,14 @@
  */
 package clases;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Sony Vaio
  */
-public class Persona {  
+public class Persona implements Serializable{  
     private String nombre, paterno, materno,fechaNacimiento;
     private int  ci, telefono;
     public void leer(){

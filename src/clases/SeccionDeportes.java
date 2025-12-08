@@ -8,9 +8,10 @@ package clases;
  *
  * @author Sony Vaio
  */
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class SeccionDeportes {
+public class SeccionDeportes implements Serializable{
 
     private String nomSeccion;
     private int nroEscuelas = 0;

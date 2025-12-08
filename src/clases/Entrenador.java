@@ -4,13 +4,14 @@
  */
 package clases;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Sony Vaio
  */
-public class Entrenador extends Persona{
+public class Entrenador extends Persona implements Serializable{
     private String especialidad;
     private int aniosExp;
     public void leer(){

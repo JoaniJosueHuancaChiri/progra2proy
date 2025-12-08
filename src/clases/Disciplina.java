@@ -4,13 +4,14 @@
  */
 package clases;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Sony Vaio
  */
-public class Disciplina {
+public class Disciplina implements Serializable{
 
     private String nombre, categoria, estado;
     private int cupoMax = 0, nroDeportistas, nroAsistencias = 0;

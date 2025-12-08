@@ -8,67 +8,58 @@ package clases;
  *
  * @author Sony Vaio
  */
+import java.util.Scanner;
 
+// Main.javaexactamente como tu ejemplo
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        SeccionDeportes seccion = new SeccionDeportes();
-        int opcion;
+        Scanner sc = new Scanner(System.in);
+        ArchiSeccion archi = new ArchiSeccion("datosMedicos.dat");
+        boolean sw = true;
 
-        do {
+        while (sw) {
             System.out.println("\n===== SISTEMA DE GESTION DEPORTIVA =====");
-            System.out.println("1. Registrar Seccion de Deportes");
-            System.out.println("2. Registrar Escuelas Deportivas");
-            System.out.println("3. Inscribir Deportistas en una Disciplina");
-            System.out.println("4. Registrar Asistencia");
-            System.out.println("5. Mostrar toda la informacion");
-            System.out.println("6. Salir");
-            System.out.print("Seleccione una opcion: ");
-            opcion = scanner.nextInt();
+            System.out.println("1. Crear archivo");
+            System.out.println("2. Registrar Seccion de Deportes");
+            System.out.println("3. Registrar Escuela Deportiva");
+            System.out.println("4. Inscribir Deportista");
+            System.out.println("5. Registrar Asistencia");
+            System.out.println("6. Mostrar toda la informacion");
+            System.out.println("7. Mostrar todas las asistencias");
+            System.out.println("0. Salir");
+            System.out.print("Elija una opcion: ");
+            String op = sc.nextLine();
 
-            switch (opcion) {
-                case 1:
-                    System.out.println("\n--- REGISTRO DE SECCION DE DEPORTES ---");
-                    seccion.leer();
+            switch (op) {
+                case "1":
+                    archi.crear();
                     break;
-
-                case 2:
-                    if (seccion.getNomSeccion() == null) {
-                        System.out.println("Primero registre la Seccion de Deportes.");
-                    } else {
-                        System.out.println("\n--- REGISTRO DE ESCUELAS DEPORTIVAS ---");
-                        seccion.registrarEscuelas();
-                    }
+                case "2":
+                    archi.registrarSeccion();
                     break;
-
-                case 3:
-                    if (seccion.getNroEscuelas() == 0) {
-                        System.out.println("No hay escuelas registradas.");
-                    } else {
-                        seccion.inscribirDeportistasEnDisciplina();
-                    }
+                case "3":
+                    archi.adicionarEscuela();
                     break;
-
-                case 4:
-                    if (seccion.getNroEscuelas() == 0) {
-                        System.out.println("No hay datos para registrar asistencia.");
-                    } else {
-                        seccion.registrarAsistencia();
-                    }
+                case "4":
+                    archi.inscribirDeportista();
                     break;
-
-                case 5:
-                    System.out.println("\n=== MOSTRANDO TODA LA INFORMACION ===");
-                    seccion.mostrar();
+                case "5":
+                    archi.registrarAsistencia();
                     break;
-
+                case "6":
+                    archi.mostrarTodo();
+                    break;
+                case "7":
+                    archi.mostrarAsistencias();
+                    break;
+                
                 default:
-                    break;
+                    sw=false;
             }
-        } while (opcion != 6);
-
-        scanner.close();
+        }
+        sc.close();
     }
 }

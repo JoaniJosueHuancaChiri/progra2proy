@@ -4,13 +4,14 @@
  */
 package clases;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Sony Vaio
  */
-public class Horario {
+public class Horario implements Serializable{
     private String dia, horaInicio, horaFin;
     public void leer(){
         System.out.println("Digite dia, horaInicio, horaFin");
